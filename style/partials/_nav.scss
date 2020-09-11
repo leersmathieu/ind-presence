@@ -1,0 +1,16 @@
+.main-nav {
+    margin: auto 10px;
+    text-align: center;
+    ul {
+        li {
+            display: inline-block;
+            padding: 20px;
+            background-color: $gray;
+            border: 1px solid $gray_dark;
+            border-radius: 5px;
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
