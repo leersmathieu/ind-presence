@@ -217,6 +217,14 @@ hr.major {
   text-align: right;
 }
 
+#page-connection {
+  text-align: center;
+}
+
+#page-connection .connection {
+  padding: 30px;
+}
+
 .control {
   display: block;
   position: relative;

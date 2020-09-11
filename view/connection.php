@@ -2,8 +2,8 @@
 
     <div id="page-connection">
         <section class="content">
-           <div class="connection">PAGE DE CONECTION</div>
-           <a href="presence">Next</a>
+           <div class="connection">PAGE DE CONNEXION</div>
+           <a href="presence">Entrer</a>
         </section>
     </div>
     
