@@ -4,6 +4,26 @@ form {
     padding-top: 30px;
     margin: auto;
     margin-bottom: 20px;
+    #select_classe {
+        width: 55%;
+        margin: auto;
+        text-align: center;
+        max-width: 285px;
+        margin: auto;
+    }
+    
+    #classe_name {
+        background: none;
+        border: none;
+        text-align: center;
+        margin: auto;
+        font-weight: bold;
+        text-decoration: underline;
+        font-size: 24px;
+        padding: 0;
+        max-height: 60px;
+        color: $color_accent;
+    }
 }
 
 label {
@@ -207,21 +227,3 @@ input[type="submit"] {
     opacity: 1.0;
 }
 
-#select_classe {
-    width: 50%;
-    margin: auto;
-    text-align: center;
-}
-
-#classe_name {
-    background: none;
-    border: none;
-    text-align: center;
-    margin: auto;
-    font-weight: bold;
-    text-decoration: underline;
-    font-size: 24px;
-    padding: 0;
-    max-height: 60px;
-    color: $color_accent;
-}

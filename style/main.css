@@ -3,24 +3,9 @@
 @import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:300,400|Pacifico");
 /* var */
-@-ms-viewport {
-  width: device-width;
-}
-
-body {
-  -ms-overflow-style: scrollbar;
-}
-
 body {
   background: #fff;
   padding: 20px;
-}
-
-body.is-loading *, body.is-loading *:before, body.is-loading *:after {
-  -webkit-animation: none !important;
-  animation: none !important;
-  -webkit-transition: none !important;
-  transition: none !important;
 }
 
 .inner {
@@ -28,26 +13,11 @@ body.is-loading *, body.is-loading *:before, body.is-loading *:after {
   max-width: 65em;
 }
 
-@media screen and (max-width: 1280px) {
-  .inner {
-    max-width: 90%;
-  }
-}
-
-@media screen and (max-width: 980px) {
-  .inner {
-    max-width: 70%;
-  }
-}
-
-@media screen and (max-width: 736px) {
-  .inner {
-    max-width: 85%;
-  }
-}
-
 /* Type */
-body, input, select, textarea {
+body,
+input,
+select,
+textarea {
   color: #767d85;
   font-family: "Montserrat", sans-serif;
   font-size: 13pt;
@@ -56,31 +26,46 @@ body, input, select, textarea {
 }
 
 @media screen and (max-width: 1680px) {
-  body, input, select, textarea {
+  body,
+  input,
+  select,
+  textarea {
     font-size: 11pt;
   }
 }
 
 @media screen and (max-width: 1280px) {
-  body, input, select, textarea {
+  body,
+  input,
+  select,
+  textarea {
     font-size: 11pt;
   }
 }
 
 @media screen and (max-width: 980px) {
-  body, input, select, textarea {
+  body,
+  input,
+  select,
+  textarea {
     font-size: 12pt;
   }
 }
 
 @media screen and (max-width: 736px) {
-  body, input, select, textarea {
+  body,
+  input,
+  select,
+  textarea {
     font-size: 12pt;
   }
 }
 
 @media screen and (max-width: 480px) {
-  body, input, select, textarea {
+  body,
+  input,
+  select,
+  textarea {
     font-size: 12pt;
   }
 }
@@ -94,16 +79,23 @@ a:hover {
   text-decoration: none;
 }
 
-strong, b {
+strong,
+b {
   color: #727a82;
   font-weight: 700;
 }
 
-em, i {
+em,
+i {
   font-style: italic;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #727a82;
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
@@ -111,7 +103,12 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 1em 0;
 }
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
   color: inherit;
   text-decoration: none;
 }
@@ -430,6 +427,27 @@ form {
   margin-bottom: 20px;
 }
 
+form #select_classe {
+  width: 55%;
+  margin: auto;
+  text-align: center;
+  max-width: 285px;
+  margin: auto;
+}
+
+form #classe_name {
+  background: none;
+  border: none;
+  text-align: center;
+  margin: auto;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 24px;
+  padding: 0;
+  max-height: 60px;
+  color: #435c73;
+}
+
 label {
   color: #727a82;
   display: block;
@@ -634,23 +652,9 @@ input[type="submit"] {
   opacity: 1.0;
 }
 
-#select_classe {
-  width: 50%;
+#page-recap {
+  max-width: 450px;
   margin: auto;
-  text-align: center;
-}
-
-#classe_name {
-  background: none;
-  border: none;
-  text-align: center;
-  margin: auto;
-  font-weight: bold;
-  text-decoration: underline;
-  font-size: 24px;
-  padding: 0;
-  max-height: 60px;
-  color: #435c73;
 }
 
 .classe_absence {
@@ -666,6 +670,12 @@ input[type="submit"] {
 
 .classe_absence h4 {
   color: #435c73;
+}
+
+.recap_presence {
+  max-width: 450px;
+  margin: auto;
+  text-align: center;
 }
 
 .recap_presence h3 {
