@@ -66,5 +66,5 @@
 
         $res = $request->fetchAll();
 
-        return $res;
+        return array_reverse($res);
     }
