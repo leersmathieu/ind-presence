@@ -100,7 +100,6 @@ h6 {
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
   line-height: 1.5;
-  margin: 0 0 1em 0;
 }
 
 h1 a,
@@ -433,6 +432,7 @@ form {
   padding-top: 30px;
   margin: auto;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 form #select_classe {
@@ -440,7 +440,7 @@ form #select_classe {
   margin: auto;
   text-align: center;
   max-width: 285px;
-  margin: auto;
+  margin-bottom: 20px;
 }
 
 form #classe_name {

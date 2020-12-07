@@ -6,7 +6,13 @@
         if ($_GET['action'] == 'myclass') {
             pageMyclass();
         }
-        else if ($_GET['action'] == 'connection'){
+        else if ($_GET['action'] == 'register'){
+            pageRegister();
+        }
+        else if ($_GET['action'] == 'home'){
+            pageHome();
+        }
+        else if ($_GET['action'] == 'login'){
             pageConnection();
         }
         else if ($_GET['action'] == 'presence'){

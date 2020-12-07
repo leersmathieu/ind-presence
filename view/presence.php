@@ -1,8 +1,5 @@
 <?php 
     ob_start();
-    date_default_timezone_set('Europe/Paris');
-    $date = date("d-m-Y");
-    $heure = date("H:i");
 ?>
 
     <div id="page-presence">
@@ -48,6 +45,7 @@
                         ?> <h5><?= $e ?></h5><?php
                     }
                 }else if(isset($_POST["classe"]) && isset($_POST['submit'])){
+                    echo "<div class='recap_presence'>";
                     echo "<h3> Le ".$date." à ".$heure." - Classe : ".$_POST["classe"]."</h3>";
                     echo "Pas d'absent !";
                 }

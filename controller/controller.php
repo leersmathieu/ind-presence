@@ -2,22 +2,42 @@
 
     require('modele/modele.php'); 
 
-    function pageConnection(){
+    function pageRegister(){
 
-        // $comptes= getAccounts();
-        $comptes = ["test1", "test2"];
+        $login = register();
+        require('view/register.php');
+    }
     
-        require('view/connection.php');
+    function pageConnection(){
+        
+        session_start();
+        $login = login();
+        require('view/login.php');
     }
 
-    function pageRecap(){
-        
-        $absence = getAbsence();
+    function pageHome(){
+        session_start();
+        if(!isset($_SESSION['login'])){
+            header("Location: login");
+            exit(); 
+        }
 
-        require('view/recap.php');
+        require('view/home.php');
+
     }
 
     function pagePresence(){
+
+        session_start();
+
+        if(!isset($_SESSION['login'])){
+            header("Location: login");
+            exit(); 
+        }
+
+        date_default_timezone_set('Europe/Paris');
+        $date = date("Y-m-d");
+        $heure = date("H:i");
 
         $eleves= getStudent();
         $classes= getClass();
@@ -25,4 +45,21 @@
     
         require('view/presence.php');
     }
-    
+
+    function pageRecap(){
+
+        session_start();
+        if(!isset($_SESSION['login'])){
+            header("Location: login");
+            exit(); 
+        }
+
+        date_default_timezone_set('Europe/Paris');
+        $date = date("Y-m-d");
+        $heure = date("H:i");
+        
+        $absence = getAbsence();
+        $classes= getClass();
+
+        require('view/recap.php');
+    }
