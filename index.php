@@ -22,9 +22,9 @@
             pageRecap();
         }
         else {
-            pageConnection();            
+            pageHome();            
         }
     }
     else {
-        pageConnection();
+        pageHome();
     }

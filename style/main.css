@@ -5,7 +5,6 @@
 /* var */
 body {
   background: #fff;
-  padding: 20px;
 }
 
 .inner {
@@ -96,6 +95,7 @@ h3,
 h4,
 h5,
 h6 {
+  text-align: center;
   color: #727a82;
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
@@ -214,6 +214,10 @@ hr.major {
 
 .align-right {
   text-align: right;
+}
+
+.pdt-20 {
+  padding-top: 20px;
 }
 
 #page-connection {
@@ -417,7 +421,7 @@ header h2 {
 
 .main-nav ul li {
   display: inline-block;
-  padding: 20px;
+  padding: 15px;
   background-color: rgba(144, 144, 144, 0.075);
   border: 1px solid #bbb;
   border-radius: 5px;

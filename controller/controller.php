@@ -21,7 +21,7 @@
             header("Location: login");
             exit(); 
         }
-
+        $logout = logout();
         require('view/home.php');
 
     }
@@ -29,7 +29,6 @@
     function pagePresence(){
 
         session_start();
-
         if(!isset($_SESSION['login'])){
             header("Location: login");
             exit(); 

@@ -14,6 +14,7 @@
         </header>
         <nav class="main-nav">
             <ul>
+                <li><a href="prehomesence">Home</a></li>
                 <li><a href="presence">Presence</a></li>
                 <li><a href="recap">Recap</a></li>
             </ul>

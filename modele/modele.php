@@ -1,10 +1,10 @@
 <?php
     function dbconnect(){
 
-        $servername = "localhost";
-        $username = "root";
-        $password = "root";
-        $dbname = "ind";
+        $servername = "YOUR SERVER NAME";
+        $username = "YOUR DB USER NAME";
+        $password = "YOUR DB PASSWORD";
+        $dbname = "YOU DATABASE NAME";
 
         try {
             $db = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -124,11 +124,13 @@
                                             VALUES(?, ?)");
                                                                 // Et on les ajoutes à la database
                 $registration->execute(array($login_register,$pwd_register)); 
-                echo 'Enregistrement validé';
+
+                // redirection/refresh
+                header ('location: login');
                
             }
             else {
-                echo 'info non valide';
+                echo 'Error';
             }
         }
     }
@@ -155,12 +157,10 @@
                 $sessionlogin = htmlspecialchars($_POST['login']);               
                 $sessionpwd = $_POST['pwd'];                   
     
-                    //recupération variable dans session avec sécurité//
+                //recupération variable dans session avec sécurité//
                     
                 $_SESSION['login'] = sanitize($sessionlogin);               
                 $_SESSION['pwd'] = $sessionpwd;
-                // print_r ($_SESSION['pseudo']);
-                echo '<body onLoad="alert(\'Connexion reussie...\')">';
 
                 header ('Location: home'); // refresh de la page //
 
@@ -171,3 +171,20 @@
             }
         }
     }
+
+    function logout(){
+        if (isset($_POST['dc'])){ // Si on appuie sur disconnect ...
+
+            sanitize($_POST['dc']);
+    
+            // On détruit les variables de notre session
+            session_unset ();
+    
+            // On détruit notre session
+            session_destroy ();
+            echo "fin de session";
+    
+            // redirection/refresh
+            header ('location: home');
+        }
+    } 
