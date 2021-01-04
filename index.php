@@ -9,6 +9,15 @@
         else if ($_GET['action'] == 'register'){
             pageRegister();
         }
+        else if ($_GET['action'] == 'add_student'){
+            pageAddStudent();
+        }
+        else if ($_GET['action'] == 'edit_student'){
+            pageEditStudent();
+        }
+        else if ($_GET['action'] == 'add_class'){
+            pageAddClass();
+        }
         else if ($_GET['action'] == 'home'){
             pageHome();
         }

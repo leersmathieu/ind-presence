@@ -22,13 +22,13 @@
                                 <div class="classe_absence"><?php
                                     if($row['absent'] != NULL){
                                         echo "<h4> Liste des élèves absents pour le :</h4>";
-                                        echo "<h4>".date_format($date, 'd-m-Y')." à ".date_format($heure, 'H:i')."h <br> Classe : ".$row['classe']."</h4>";
+                                        echo "<h4>".date_format($date, 'd-m-Y')." à <span class='accent'>".date_format($heure, 'H:i')."h</span>  <br> Classe : ".$row['classe']."</h4>";
                                         $eleve_absent = explode(", ",$row['absent']);
                                         foreach($eleve_absent as $name){
                                             echo "<p> - ".$name."</p>";
                                         }
                                     }else if(isset($row['classe'])){
-                                        echo "<h4>Le ".date_format($date, 'd-m-Y')." à ".date_format($heure, 'H:i')."h <br> Classe : ".$row['classe']."</h4>";
+                                        echo "<h4>Le ".date_format($date, 'd-m-Y')." à <span class='accent'>".date_format($heure, 'H:i')."h</span> <br> Classe : ".$row['classe']."</h4>";
                                         echo "<p>Pas d'absents !</p>";
                                     }?>
                                 </div><?php

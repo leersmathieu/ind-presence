@@ -7,6 +7,33 @@
         $login = register();
         require('view/register.php');
     }
+
+    function pageAddStudent(){
+        
+        session_start();
+        $add_student = add_student();
+        $classes= getClass();
+
+        require('view/add_student.php');
+    }
+
+    function pageEditStudent(){
+        
+        session_start();
+        $add_student = edit_student();
+        $classes= getClass();
+        $eleves = getStudents();
+
+        require('view/edit_student.php');
+    }
+
+    function pageAddClass(){
+        
+        session_start();
+        $add_student = add_class();
+
+        require('view/add_class.php');
+    }
     
     function pageConnection(){
         
@@ -38,7 +65,7 @@
         $date = date("Y-m-d");
         $heure = date("H:i");
 
-        $eleves= getStudent();
+        $eleves= getStudents();
         $classes= getClass();
         $insertAbsence = insertAbsence();
     

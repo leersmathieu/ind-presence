@@ -1,3 +1,7 @@
+$primaryColor: #435c73;
+$secondaryColor: #767d85;
+$accentColor: #25a2c3;
+
 body {
     background: #fff;
     // padding: 20px;
@@ -14,7 +18,7 @@ body,
 input,
 select,
 textarea {
-    color: #767d85;
+    color: $secondaryColor;
     font-family: "Montserrat", sans-serif;
     font-size: 13pt;
     font-weight: normal;
@@ -77,7 +81,7 @@ textarea {
 }
 
 a {
-    color: #25a2c3;
+    color: $accentColor;
     text-decoration: underline;
 }
 
@@ -87,7 +91,7 @@ a:hover {
 
 strong,
 b {
-    color: #727a82;
+    color: $secondaryColor;
     font-weight: 700;
 }
 
@@ -103,7 +107,7 @@ h4,
 h5,
 h6 {
     text-align: center;
-    color: #727a82;
+    color: $secondaryColor;
     font-weight: 700;
     font-family: "Montserrat", sans-serif;
     line-height: 1.5;
@@ -143,6 +147,14 @@ h5 {
 
 h6 {
     font-size: 0.7em;
+}
+
+.content {
+    max-width: 1000px;
+    margin: auto;
+    li {
+        text-align: center;
+    }
 }
 
 sub {
@@ -226,4 +238,8 @@ hr.major {
 
 .pdt-20 {
     padding-top: 20px;
+}
+
+.accent {
+    color:$accentColor;
 }

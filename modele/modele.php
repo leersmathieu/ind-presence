@@ -39,21 +39,17 @@
         $sanitized_variable = null;
 
             if(is_array($key)){                 // si la valeur est un tableau...
-
                 $sanitized_variable = filter_var_array($key, $filter);
-
             }
 
             else {                              // sinon ...
-
                 $sanitized_variable = filter_var($key, $filter);
-
             }
 
         return $sanitized_variable;
     }
 
-    function getStudent(){
+    function getStudents(){
 
         $db = dbconnect();
         $request = $db->query('SELECT * FROM etudiant');
@@ -127,6 +123,102 @@
 
                 // redirection/refresh
                 header ('location: login');
+               
+            }
+            else {
+                echo 'Error';
+            }
+        }
+    }
+
+
+    function add_student(){
+        $db = dbconnect();
+
+        if (isset($_POST['add_student'])){ // Si on appuie sur 'ajouter'
+
+            sanitize($_POST['add_student']);
+    
+            if (isset($_POST['student_first_name']) AND isset($_POST['student_name']) AND isset($_POST['student_class'])) { //si...
+                
+                $student_first_name = htmlspecialchars($_POST['student_first_name']);
+                $student_first_name = str_replace(' ', '', $student_first_name);
+                $student_name = htmlspecialchars($_POST['student_name']);
+                $student_name = str_replace(' ', '', $student_name);
+                $student_class = htmlspecialchars($_POST['student_class']); // on récupère les valeurs POST dans des variables et on up la sécurité
+    
+                $student_name = sanitize($student_name); 
+                $student_first_name = sanitize($student_first_name); 
+    
+                $registration = $db->prepare("INSERT INTO etudiant  
+                                            (nom, prenom, classe_id) 
+                                            VALUES(?, ?, ?)");
+                                                                // Et on les ajoutes à la database
+                $registration->execute(array($student_name, $student_first_name, $student_class)); 
+
+                // redirection/refresh
+                header ('location: home');
+               
+            }
+            else {
+                echo 'Error';
+            }
+        }
+    }
+
+    function edit_student(){
+        $db = dbconnect();
+
+        if (isset($_POST['edit_student'])){ // Si on appuie sur...
+
+            sanitize($_POST['edit_student']);
+    
+            if (isset($_POST['eleve'])) { //si...
+                
+                $array = explode(" ", $_POST['eleve'][0]);
+                sanitize($array);
+
+                $name = $array[0];
+                $firstname = $array[1];
+                // var_dump($array); 
+    
+                $registration = $db->prepare("DELETE FROM etudiant  
+                                            WHERE nom=?
+                                            AND prenom=?") ;
+                                           
+                                                                // Et on les ajoutes à la database
+                $registration->execute(array($name, $firstname)); 
+
+                // redirection/refresh
+                header ('location: home');
+               
+            }
+            else {
+                echo 'Error';
+            }
+        }
+    }
+
+    function add_class(){
+        $db = dbconnect();
+
+        if (isset($_POST['add_class'])){ // Si on appuie sur 'ajouter'
+
+            sanitize($_POST['add_class']);
+    
+            if (isset($_POST['class_name'])) { //si...
+                
+                $class_name = htmlspecialchars($_POST['class_name']);
+                $class_name = sanitize($class_name); 
+    
+                $registration = $db->prepare("INSERT INTO classe  
+                                            (nom) 
+                                            VALUES(?)");
+                                            
+                $registration->execute(array($class_name)); 
+
+                // redirection/refresh
+                header ('location: home');
                
             }
             else {

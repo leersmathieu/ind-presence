@@ -80,7 +80,7 @@ a:hover {
 
 strong,
 b {
-  color: #727a82;
+  color: #767d85;
   font-weight: 700;
 }
 
@@ -96,7 +96,7 @@ h4,
 h5,
 h6 {
   text-align: center;
-  color: #727a82;
+  color: #767d85;
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
   line-height: 1.5;
@@ -135,6 +135,15 @@ h5 {
 
 h6 {
   font-size: 0.7em;
+}
+
+.content {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.content li {
+  text-align: center;
 }
 
 sub {
@@ -220,6 +229,10 @@ hr.major {
   padding-top: 20px;
 }
 
+.accent {
+  color: #25a2c3;
+}
+
 #page-connection {
   text-align: center;
 }
@@ -231,9 +244,7 @@ hr.major {
 .control {
   display: block;
   position: relative;
-  padding-left: 30px;
   margin-bottom: 5px;
-  padding-top: 3px;
   cursor: pointer;
   font-size: 16px;
 }
@@ -672,8 +683,8 @@ input[type="submit"] {
 .classe_absence {
   padding: 10px;
   border: 1px solid #435c73;
-  margin-bottom: 10px;
   border-radius: 5px;
+  margin: 10px;
 }
 
 .classe_absence:first-child {
